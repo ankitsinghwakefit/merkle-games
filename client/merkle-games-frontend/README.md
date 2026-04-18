@@ -1,75 +1,72 @@
-# Nuxt Minimal Starter
+# 🎮 Nuxt Games Explorer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A responsive web app built with **Nuxt 3 + TypeScript** to explore games using a REST API. The focus is on clean architecture, performance, and accessibility.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 🚀 Tech Stack
+
+* Nuxt 3
+* TypeScript
+* SCSS (no UI libraries)
+* Vitest (basic testing)
+
+---
+
+## 📌 Features
+
+### Index Page
+
+* Displays **15 random games (2015–2017)**
+* Responsive **multi-column flexbox layout**
+* Game card shows image, title, release date, rating, and genre
+* **Search (debounced)**
+* **Filter by genre**
+* **Sorting** (rating / release date)
+
+### Detail Page
+
+* Full game details:
+
+  * Title, description, image
+  * Release date, rating, developer, genre
+* **Reviews list** (user, rating, text)
+* Back navigation + smooth transitions
+
+---
+
+## ⚙️ Key Decisions
+
+* **Two-step API calls:** fetch IDs → fetch full details
+* Used `Promise.all` for parallel requests
+* **Composables over Pinia** (lightweight state handling)
+* Separated **API models vs UI models**
+
+---
+
+## 🧪 Run Locally
 
 ```bash
-# npm
+# Start API
+docker-compose up
+
+# Start client
+cd client
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+App: http://localhost:3000
+API Docs: http://localhost:8000/api-docs
 
-Build the application for production:
+---
 
-```bash
-# npm
-npm run build
+## ⏱️ Time Spent
 
-# pnpm
-pnpm build
+~ 5 - 6 hours
 
-# yarn
-yarn build
+---
 
-# bun
-bun run build
-```
+## 📎 Repository
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+(https://github.com/ankitsinghwakefit/merkle-games/tree/master/client/merkle-games-frontend)

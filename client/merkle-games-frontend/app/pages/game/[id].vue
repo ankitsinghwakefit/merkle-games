@@ -84,7 +84,6 @@ const formattedDate = computed(() =>
     : ''
 )
 
-// 🖼️ Fallback
 const setFallback = (e: Event) => {
   ;(e.target as HTMLImageElement).src = '/fallback.jpg'
 }
@@ -92,38 +91,149 @@ const setFallback = (e: Event) => {
 
 <style scoped lang="scss">
 .container {
-  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
 }
 
 .back-btn {
-  margin-bottom: 16px;
-}
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
-.details {
-  max-width: 800px;
-  margin: auto;
+  margin-bottom: 20px;
+  padding: 8px 14px;
 
-  img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 16px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+
+  &:focus {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
   }
 }
 
+.details {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.details h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.details img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 18px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 18px;
+}
+
 .game-details {
-  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+
+  padding: 14px;
+  border-radius: 12px;
+  background: #f9fafb;
+
+  margin-bottom: 24px;
+
+  p {
+    font-size: 14px;
+    color: #374151;
+  }
+
+  strong {
+    color: #111827;
+  }
+}
+
+.game-details p:nth-child(2) {
+  color: #f59e0b;
+  font-weight: 600;
 }
 
 .reviews {
-  margin-top: 24px;
+  margin-top: 10px;
 }
 
+.reviews h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+/* Review Card */
 .review {
-  padding: 12px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 14px;
+  border-radius: 12px;
+  background: #ffffff;
+
+  border: 1px solid #f1f5f9;
+  margin-bottom: 12px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  }
 }
 
 .user {
-  font-weight: bold;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.review p:last-child {
+  margin-top: 6px;
+  font-weight: 500;
+  color: #f59e0b;
+}
+
+@media (max-width: 768px) {
+  .details img {
+    height: 240px;
+  }
+
+  .details h1 {
+    font-size: 22px;
+  }
+}
+
+body {
+  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
 }
 </style>
