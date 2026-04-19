@@ -69,7 +69,7 @@ const formattedDate = computed(() =>
   cursor: pointer;
   border-radius: 16px;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--card-bg);
   position: relative;
 
   display: flex;
@@ -90,7 +90,7 @@ const formattedDate = computed(() =>
   }
 
   &:focus {
-    outline: 2px solid #6366f1;
+    outline: 2px solid var(--primary);
     outline-offset: 3px;
   }
 }
@@ -101,7 +101,7 @@ const formattedDate = computed(() =>
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: #e5e7eb;
+  background: var(--border);
 
   img {
     width: 100%;
@@ -138,7 +138,7 @@ const formattedDate = computed(() =>
   font-size: 16px;
   font-weight: 600;
   margin: 0;
-  color: #111827;
+  color: var(--text);
 
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -148,16 +148,19 @@ const formattedDate = computed(() =>
 
 .game-date {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .rating {
   font-size: 14px;
   font-weight: 600;
-  color: #f59e0b;
+  color: var(--rating);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 
   span {
-    color: #374151;
+    color: var(--text-soft);
     font-weight: 400;
     margin-left: 4px;
   }

@@ -105,8 +105,9 @@ const setFallback = (e: Event) => {
   padding: 8px 14px;
 
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
 
   font-size: 14px;
   cursor: pointer;
@@ -114,17 +115,23 @@ const setFallback = (e: Event) => {
   transition: all 0.2s ease;
 
   &:hover {
-    background: #f3f4f6;
+    background: var(--bg);
+    border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 
   &:focus {
-    outline: 2px solid #6366f1;
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
   }
 }
 
 .details {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 18px;
   padding: 20px;
 
@@ -137,7 +144,7 @@ const setFallback = (e: Event) => {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #111827;
+  color: var(--text);
 }
 
 .details img {
@@ -153,7 +160,7 @@ const setFallback = (e: Event) => {
 .description {
   font-size: 15px;
   line-height: 1.6;
-  color: #374151;
+  color: var(--text-soft);
   margin-bottom: 18px;
 }
 
@@ -164,22 +171,24 @@ const setFallback = (e: Event) => {
 
   padding: 14px;
   border-radius: 12px;
-  background: #f9fafb;
+  background: var(--bg);
+  border: 1px solid var(--border);
 
   margin-bottom: 24px;
 
   p {
     font-size: 14px;
-    color: #374151;
+    color: var(--text-soft);
   }
 
   strong {
-    color: #111827;
+    color: var(--text);
   }
 }
 
+/* Rating highlight */
 .game-details p:nth-child(2) {
-  color: #f59e0b;
+  color: var(--rating);
   font-weight: 600;
 }
 
@@ -191,14 +200,14 @@ const setFallback = (e: Event) => {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 14px;
-  color: #111827;
+  color: var(--text);
 }
 
 /* Review Card */
 .review {
   padding: 14px;
   border-radius: 12px;
-  background: #ffffff;
+  background: var(--card-bg);
 
   border: 1px solid #f1f5f9;
   margin-bottom: 12px;
@@ -214,7 +223,7 @@ const setFallback = (e: Event) => {
 .user {
   font-weight: 600;
   margin-bottom: 6px;
-  color: #111827;
+  color: var(--text);
 }
 
 .review p:last-child {
@@ -234,6 +243,6 @@ const setFallback = (e: Event) => {
 }
 
 body {
-  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+  background: linear-gradient(to bottom, var(--bg), #f3f4f6);
 }
 </style>

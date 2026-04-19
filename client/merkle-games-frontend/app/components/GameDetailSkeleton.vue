@@ -12,19 +12,19 @@
   .title {
     height: 24px;
     width: 60%;
-    background: #e5e7eb;
+    background: var(--border);
     margin-bottom: 16px;
   }
 
   .image {
     height: 300px;
-    background: #e5e7eb;
+    background: var(--border);
     margin-bottom: 16px;
   }
 
   .line {
     height: 12px;
-    background: #e5e7eb;
+    background: var(--border);
     margin-bottom: 8px;
 
     &.short {

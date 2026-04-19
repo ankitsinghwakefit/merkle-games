@@ -22,6 +22,10 @@
       <option value="rating">Sort by Rating</option>
       <option value="date">Sort by Release Date</option>
     </select>
+
+    <button @click="toggleTheme" class="theme-toggle">
+      {{ theme === 'light' ? '🌙 Dark' : '☀️ Light' }}
+    </button>
     </div>
     <!-- game card Grid -->
     <div class="grid">
@@ -36,6 +40,7 @@ import { useGames } from '@/composables/useGames'
 import { api } from '@/services/api'
 
 const { games, fetchRandomGames, searchGames, getGamesByGenre } = useGames()
+const { toggleTheme, theme } = useTheme()
 
 const search = ref('')
 const selectedGenre = ref('')
@@ -86,7 +91,7 @@ h1 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #111827;
+  color: var(--text);
 }
 
 .controls {
@@ -101,13 +106,13 @@ input {
   min-height: 42px;
   padding: 0 12px;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   font-size: 14px;
   transition: border 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
-    border-color: #6366f1;
+    border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
   }
 }
@@ -117,8 +122,7 @@ select {
   min-height: 42px;
   padding: 0 10px;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
+  border: 1px solid var(--border);
   font-size: 14px;
   cursor: pointer;
 
@@ -126,8 +130,21 @@ select {
 
   &:focus {
     outline: none;
-    border-color: #6366f1;
+    border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  }
+}
+
+.theme-toggle {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text);
+
+  &:hover {
+    border-color: var(--primary);
   }
 }
 
@@ -173,6 +190,6 @@ select {
 }
 
 body {
-  background: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+  background: linear-gradient(to bottom, var(--bg), #f3f4f6);
 }
 </style>

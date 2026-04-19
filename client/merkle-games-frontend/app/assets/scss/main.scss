@@ -1,3 +1,29 @@
 body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bg: #f9fafb;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --primary: #6366f1;
+  --text-muted: #6b7280;
+  --text-soft: #374151;
+  --rating: #f59e0b;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --bg: #111827;
+  --text: #f3f4f6;
+  --card-bg: #1f2937;
+  --border: #374151;
+  --primary: #818cf8;
+  --text-muted: #9ca3af;
+  --text-soft: #d1d5db;
+  --rating: #fbbf24;
 }
